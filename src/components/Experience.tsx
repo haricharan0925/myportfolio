@@ -17,7 +17,7 @@ export function Experience() {
             <header className="exp-head">
               <div>
                 <h3>{experience.title}</h3>
-                <p className="exp-sub">Software engineering · AI · Cloud</p>
+                <p className="exp-sub">{experience.subtitle}</p>
               </div>
               <span className="pill pill-accent">{experience.duration}</span>
             </header>

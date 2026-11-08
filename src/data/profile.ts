@@ -1,29 +1,34 @@
 /**
  * Single source of truth for all site content.
  * Edit this file to update copy, links, skills and projects.
+ *
+ * Privacy: keep everything here generic. No employer names, internal
+ * project names, awards, work metrics, phone number or LinkedIn.
  */
 import type { IconType } from 'react-icons';
 import {
-  LuBot,
   LuBrainCircuit,
   LuCloud,
   LuCode2,
-  LuContainer,
   LuDatabase,
   LuFileText,
   LuLanguages,
   LuLayoutDashboard,
+  LuMic,
   LuMonitorSmartphone,
   LuMusic,
+  LuNetwork,
   LuServer,
+  LuServerCog,
   LuSmartphone,
-  LuWorkflow,
   LuWrench,
+  LuBoxes,
 } from 'react-icons/lu';
 import {
   SiDocker,
   SiFastapi,
   SiKubernetes,
+  SiLangchain,
   SiMicrosoftazure,
   SiPython,
   SiReact,
@@ -34,18 +39,16 @@ import {
 export const profile = {
   name: 'Hari Charan',
   initials: 'HC',
-  role: 'Software Engineer',
-  headline: ['Software Engineer', 'Python', 'AI & LLM Engineering', 'Azure Cloud'],
-  statement: 'Building AI-powered applications, scalable backend systems and modern software solutions.',
+  role: 'AI Engineer',
+  headline: ['AI Engineer', 'Python', 'LLMs & Agentic AI', 'Azure Cloud'],
+  statement: 'Building AI-powered applications, agentic workflows and scalable backend systems.',
   intro:
-    'Software Engineer with 3 years of professional experience in Python development, AI engineering, LLM integrations, cloud deployments and full-stack application development. Experienced in building AI-powered solutions, real-time AI translation pipelines, automated deployment workflows and scalable backend applications.',
+    'AI Engineer with 3 years of professional experience in Python development, LLM applications, RAG and multi-agent systems, voice AI, cloud deployments and full-stack development.',
   experienceYears: '3 Years',
   email: 'haricharan.0925@gmail.com',
   github: 'https://github.com/haricharan0925',
   githubHandle: 'haricharan0925',
   location: 'Bengaluru, India',
-  /** Add a real LinkedIn profile URL here to show it. Leave empty to hide. */
-  linkedin: '',
 };
 
 export const navLinks = [
@@ -59,17 +62,18 @@ export const navLinks = [
 
 export const highlights: { icon: IconType; title: string; text: string }[] = [
   { icon: LuCode2, title: '3 Years', text: 'Professional experience' },
-  { icon: LuBrainCircuit, title: 'AI & LLMs', text: 'Application development' },
+  { icon: LuBrainCircuit, title: 'LLMs & RAG', text: 'AI applications' },
+  { icon: LuNetwork, title: 'Agentic AI', text: 'Multi-agent automation' },
   { icon: LuCloud, title: 'Azure Cloud', text: 'Deployments & CI/CD' },
-  { icon: LuLayoutDashboard, title: 'Full-Stack', text: 'Web applications' },
 ];
 
 export const heroTech: { icon: IconType; label: string }[] = [
   { icon: SiPython, label: 'Python' },
   { icon: LuBrainCircuit, label: 'LLMs' },
-  { icon: SiFastapi, label: 'FastAPI' },
+  { icon: SiLangchain, label: 'LangChain' },
   { icon: SiMicrosoftazure, label: 'Azure' },
   { icon: SiDocker, label: 'Docker' },
+  { icon: SiFastapi, label: 'FastAPI' },
   { icon: SiKubernetes, label: 'Kubernetes' },
   { icon: SiReact, label: 'React' },
   { icon: SiTypescript, label: 'TypeScript' },
@@ -77,27 +81,29 @@ export const heroTech: { icon: IconType; label: string }[] = [
 ];
 
 export const about = [
-  'Software Engineer specialising in Python, Artificial Intelligence and modern application development.',
-  'Experienced in developing LLM-powered applications, AI chatbots, RAG pipelines, real-time AI translation systems and backend services.',
-  'Hands-on experience with Microsoft Azure, cloud application deployments, containerisation and automated CI/CD pipelines.',
+  'AI Engineer specialising in Python, Generative AI and modern application development.',
+  'Experienced in developing LLM-powered applications, AI chatbots, RAG pipelines, multi-agent workflows, voice AI agents and real-time AI translation systems.',
+  'Hands-on experience with Microsoft Azure, cloud deployments, containerisation and automated CI/CD pipelines, alongside Python backend services and REST APIs.',
   'Interested in building reliable, scalable and production-ready AI applications.',
 ];
 
 export const experience = {
-  title: 'Software Engineer',
+  title: 'AI Engineer',
+  subtitle: 'Generative AI · Backend · Cloud',
   duration: '3 Years',
   points: [
     'Developed and integrated AI-powered applications using Large Language Models.',
-    'Worked on real-time AI translation pipelines and multilingual processing workflows.',
-    'Built Python-based backend services and REST APIs.',
-    'Integrated LLMs and AI models into applications.',
-    'Worked on automated application deployment pipelines and CI/CD workflows.',
-    'Deployed and managed applications using Microsoft Azure cloud services.',
-    'Worked with Docker, Kubernetes and containerised application environments.',
-    'Developed data-processing workflows and database-driven applications.',
+    'Built multi-agent workflow automation using n8n and agent frameworks.',
+    'Developed RAG pipelines and knowledge-retrieval assistants, including with locally hosted LLMs.',
+    'Built voice-enabled AI agents with speech recognition, text-to-speech and telephony integration.',
+    'Worked on real-time AI translation and multilingual media processing pipelines.',
+    'Built Python-based backend services and REST APIs with FastAPI.',
+    'Automated cloud VM provisioning, deployment pipelines and CI/CD workflows using Python and Linux scripting.',
+    'Deployed and managed applications on Microsoft Azure with Docker and containerised environments.',
+    'Built machine learning models for time-series forecasting and anomaly detection.',
     'Used AI-assisted development tools to improve engineering productivity.',
   ],
-  tags: ['Python', 'LLMs', 'REST APIs', 'Azure', 'Docker', 'Kubernetes', 'CI/CD'],
+  tags: ['Python', 'LLMs', 'RAG', 'AI Agents', 'FastAPI', 'Azure', 'Docker', 'CI/CD'],
 };
 
 export type SkillGroup = {
@@ -113,14 +119,14 @@ export const skillGroups: SkillGroup[] = [
     icon: LuBrainCircuit,
     tier: 'primary',
     items: [
-      'Large Language Models (LLMs)',
-      'AI chatbots & conversational AI',
+      'LLM applications',
       'Retrieval-Augmented Generation (RAG)',
-      'Model fine-tuning & evaluation',
+      'Multi-agent workflows',
       'AI agents & workflow automation',
+      'AI chatbots & conversational AI',
+      'Embedding pipelines',
+      'LoRA fine-tuning & evaluation',
       'Real-time AI translation pipelines',
-      'Speech-to-Text (STT)',
-      'Text-to-Speech (TTS)',
     ],
   },
   {
@@ -130,7 +136,7 @@ export const skillGroups: SkillGroup[] = [
     items: [
       'Python',
       'FastAPI',
-      'REST APIs',
+      'REST API design',
       'Backend architecture',
       'API integration',
       'Asynchronous processing',
@@ -142,28 +148,34 @@ export const skillGroups: SkillGroup[] = [
     icon: LuCloud,
     tier: 'primary',
     items: [
-      'Microsoft Azure',
+      'Microsoft Azure (VMs, Blob Storage)',
       'Azure AI Foundry',
       'Docker',
       'Kubernetes',
-      'Cloud application deployments',
       'Automated CI/CD pipelines',
-      'Deployment automation',
+      'VM provisioning & deployment automation',
+      'Linux scripting',
       'Application configuration & monitoring',
     ],
   },
   {
-    title: 'Full Stack',
-    icon: LuLayoutDashboard,
+    title: 'LLM Frameworks & Tooling',
+    icon: LuBoxes,
+    tier: 'secondary',
+    items: ['LangChain', 'CrewAI', 'n8n', 'Azure OpenAI', 'Ollama', 'LLaMA (local LLMs)', 'ChromaDB', 'FAISS'],
+  },
+  {
+    title: 'Voice & Media AI',
+    icon: LuMic,
     tier: 'secondary',
     items: [
-      'React',
-      'TypeScript',
-      'HTML',
-      'CSS',
-      'Responsive web applications',
-      'Frontend/backend integration',
-      'Dashboard development',
+      'Speech-to-Text',
+      'Text-to-Speech',
+      'Azure Speech Services',
+      'ElevenLabs',
+      'Twilio',
+      'FFmpeg',
+      'HLS/SRT stream processing',
     ],
   },
   {
@@ -172,18 +184,25 @@ export const skillGroups: SkillGroup[] = [
     tier: 'secondary',
     items: [
       'Data analytics & processing',
+      'Forecasting & anomaly detection',
       'PostgreSQL',
       'MySQL',
       'SQLite',
-      'Database design & optimisation',
-      'Data visualisation & reporting',
+      'MongoDB',
+      'Database design',
     ],
+  },
+  {
+    title: 'Full Stack',
+    icon: LuLayoutDashboard,
+    tier: 'secondary',
+    items: ['React', 'TypeScript', 'HTML', 'CSS', 'Responsive web apps', 'Frontend/backend integration', 'Dashboards'],
   },
   {
     title: 'Development Tools',
     icon: LuWrench,
     tier: 'secondary',
-    items: ['Claude Code', 'GitHub Copilot', 'Git', 'GitHub', 'VS Code', 'AI-assisted development workflows'],
+    items: ['Claude Code', 'GitHub Copilot', 'Git', 'GitHub', 'VS Code', 'AI-assisted workflows'],
   },
   {
     title: 'Mobile',
@@ -245,13 +264,12 @@ export const projects: Project[] = [
 
 export const capabilities: { icon: IconType; label: string }[] = [
   { icon: SiPython, label: 'Python-based AI application development' },
-  { icon: LuBrainCircuit, label: 'LLM integration and RAG implementation' },
+  { icon: LuBrainCircuit, label: 'LLM integration, RAG and AI chatbots' },
+  { icon: LuNetwork, label: 'Multi-agent workflow automation' },
+  { icon: LuMic, label: 'Voice AI and speech pipelines' },
   { icon: LuLanguages, label: 'Real-time AI translation systems' },
-  { icon: LuBot, label: 'AI chatbot and automation development' },
+  { icon: LuServerCog, label: 'Local and self-hosted LLM deployment' },
   { icon: LuServer, label: 'Backend and API engineering' },
-  { icon: SiMicrosoftazure, label: 'Azure cloud deployments' },
-  { icon: LuContainer, label: 'Docker, Kubernetes and CI/CD automation' },
-  { icon: LuWorkflow, label: 'Full-stack application development' },
-  { icon: LuDatabase, label: 'Data analytics and database engineering' },
+  { icon: SiMicrosoftazure, label: 'Azure, Docker, Kubernetes and CI/CD' },
+  { icon: LuDatabase, label: 'Full-stack apps, data and databases' },
 ];
-

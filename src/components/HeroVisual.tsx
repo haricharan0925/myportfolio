@@ -68,7 +68,7 @@ export function HeroVisual() {
       </div>
       <div className="float-card float-card-2">
         <span className="float-dot float-dot-alt" />
-        <span>Azure · CI/CD</span>
+        <span>Multi-agent workflows</span>
       </div>
     </div>
   );

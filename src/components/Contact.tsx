@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { LuArrowUpRight, LuCheck, LuCopy, LuMail } from 'react-icons/lu';
 import { SiGithub } from 'react-icons/si';
-import { FaLinkedin } from 'react-icons/fa6';
 import { profile } from '../data/profile';
 import { Reveal } from './Reveal';
 
@@ -66,22 +65,6 @@ export function Contact() {
               <LuArrowUpRight aria-hidden="true" className="contact-arrow" />
               <span className="sr-only">(opens in a new tab)</span>
             </a>
-
-            {profile.linkedin && (
-              <a href={profile.linkedin} className="contact-card spotlight" target="_blank" rel="noopener noreferrer">
-                <span className="contact-card-main">
-                  <span className="contact-icon" aria-hidden="true">
-                    <FaLinkedin />
-                  </span>
-                  <span>
-                    <span className="contact-label">LinkedIn</span>
-                    <span className="contact-value">View profile</span>
-                  </span>
-                </span>
-                <LuArrowUpRight aria-hidden="true" className="contact-arrow" />
-                <span className="sr-only">(opens in a new tab)</span>
-              </a>
-            )}
           </div>
         </Reveal>
       </div>

@@ -5,7 +5,7 @@ import { SectionHeading } from './SectionHeading';
 
 const facts = [
   { icon: LuBriefcase, label: 'Experience', value: `${profile.experienceYears}, professional` },
-  { icon: LuSparkles, label: 'Focus', value: 'Python · AI & LLMs · Azure' },
+  { icon: LuSparkles, label: 'Focus', value: 'Python · LLMs · Agents · Azure' },
   { icon: LuMapPin, label: 'Based in', value: profile.location },
   { icon: LuMail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
 ];
@@ -15,7 +15,7 @@ export function About() {
   return (
     <section id="about" className="section" aria-labelledby="about-title">
       <div className="container">
-        <SectionHeading id="about-title" eyebrow="About" title="Engineering AI that ships." />
+        <SectionHeading id="about-title" eyebrow="About" title="Building practical AI systems." />
         <div className="about-grid">
           <div className="about-copy">
             <Reveal as="p" className="about-lead">

@@ -31,7 +31,6 @@ export function Background() {
       <div className="backdrop" aria-hidden="true">
         <div className="blob blob-1" />
         <div className="blob blob-2" />
-        <div className="blob blob-3" />
         <div className="grid-overlay" />
         <div className="noise" />
       </div>

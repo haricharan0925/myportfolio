@@ -17,7 +17,6 @@ npm run preview   # serve the production build
 
 All copy, links, skills and projects live in [`src/data/profile.ts`](src/data/profile.ts).
 
-- **LinkedIn:** set `profile.linkedin` to your real profile URL and a LinkedIn card appears in Contact.
 - **Project status:** set `status: 'Completed'` or `'In progress'` on a project to show a status pill.
 
 ## Structure

@@ -16,7 +16,7 @@ export function Hero() {
           </p>
 
           <h1 id="hero-title" className="hero-title anim-in" style={{ animationDelay: '140ms' }}>
-            {first} <span className="text-accent">{rest.join(' ')}</span>
+            {first} <span className="name-underline">{rest.join(' ')}</span>
           </h1>
 
           <p className="hero-headline anim-in" style={{ animationDelay: '220ms' }}>
