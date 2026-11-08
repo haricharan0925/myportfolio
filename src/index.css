@@ -675,6 +675,7 @@ svg {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 300px;
   border-radius: var(--radius);
   border: 1px solid rgba(245,158,11,0.18);
   background: rgba(10,10,12,0.6);
@@ -846,13 +847,15 @@ svg {
 .hv-split {
   display: grid;
   grid-template-columns: 1fr 160px;
+  height: 100%;
 }
 .hv-chat {
   padding: 16px 18px 14px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 280px;
+  height: 100%;
+  overflow: hidden;
   border-right: 1px solid rgba(255,255,255,0.06);
   font-family: var(--font-mono);
   font-size: 12.5px;
@@ -861,6 +864,8 @@ svg {
 .hv-pipeline {
   padding: 14px 12px;
   display: flex;
+  height: 100%;
+  overflow: hidden;
   flex-direction: column;
   gap: 6px;
 }
@@ -995,6 +1000,28 @@ svg {
 }
 .hv-chip-dot-2 {
   background: #f97316; box-shadow: 0 0 7px #f97316;
+}
+
+@media (max-width: 640px) {
+  .hv-wrap {
+    height: 380px;
+  }
+  .hv-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  .hv-chat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    overflow-y: auto;
+    min-height: 0;
+  }
+  .hv-pipeline {
+    display: none;
+  }
+  .hv-chip {
+    display: none;
+  }
 }
 
 /* Highlights strip */
