@@ -675,7 +675,7 @@ svg {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 300px;
+  height: 320px;
   border-radius: var(--radius);
   border: 1px solid rgba(245,158,11,0.18);
   background: rgba(10,10,12,0.6);
@@ -687,12 +687,14 @@ svg {
     0 0 60px -20px rgba(245,158,11,0.18);
 }
 .hv-inner {
-  will-change: transform;
-  transition: transform 0.08s linear;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .hv-terminal {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 /* Title bar */
@@ -850,16 +852,16 @@ svg {
   height: 100%;
 }
 .hv-chat {
-  padding: 16px 18px 14px;
+  padding: 14px 16px 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   height: 100%;
   overflow: hidden;
   border-right: 1px solid rgba(255,255,255,0.06);
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  line-height: 1.65;
+  font-size: 12px;
+  line-height: 1.55;
 }
 .hv-pipeline {
   padding: 14px 12px;
@@ -1004,17 +1006,19 @@ svg {
 
 @media (max-width: 640px) {
   .hv-wrap {
-    height: 380px;
+    height: 300px;
+    overflow: hidden;
   }
   .hv-split {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    height: 100%;
   }
   .hv-chat {
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    overflow-y: auto;
-    min-height: 0;
+    overflow: hidden;
+    height: 100%;
+    font-size: 11.5px;
+    padding: 12px 14px;
   }
   .hv-pipeline {
     display: none;

@@ -43,25 +43,8 @@ export function HeroVisual() {
   const [convoIdx, setConvoIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>({ kind: 'idle' });
   const timeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
-  const wrapRef = useRef<HTMLDivElement>(null);
 
-  /* Parallax */
-  useEffect(() => {
-    let frame = 0;
-    const onScroll = () => {
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        frame = 0;
-        if (!wrapRef.current) return;
-        const rect = wrapRef.current.closest('section')?.getBoundingClientRect();
-        if (!rect) return;
-        const p = Math.max(0, -rect.top / window.innerHeight);
-        wrapRef.current.style.transform = `translateY(${p * -50}px)`;
-      });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(frame); };
-  }, []);
+
 
   const after = (ms: number, fn: () => void) => {
     const t = setTimeout(fn, ms);
@@ -140,7 +123,7 @@ export function HeroVisual() {
 
   return (
     <div className="hv-wrap" aria-hidden="true">
-      <div className="hv-inner" ref={wrapRef}>
+      <div className="hv-inner">
 
         {/* ── Title bar ── */}
         <div className="hv-titlebar">
