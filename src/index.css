@@ -674,6 +674,8 @@ svg {
 .hv-wrap {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   overflow: hidden;
   height: 320px;
   border-radius: var(--radius);
@@ -1005,14 +1007,26 @@ svg {
 }
 
 @media (max-width: 640px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-visual {
+    max-width: 100%;
+    width: 100%;
+    margin-inline: 0;
+  }
   .hv-wrap {
-    height: 380px;
+    height: 340px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
     overflow: hidden;
   }
   .hv-split {
     display: flex;
     flex-direction: column-reverse;
-    height: 100%;
+    height: calc(100% - 41px);
+    width: 100%;
   }
   .hv-chat {
     border-right: none;
@@ -1021,70 +1035,68 @@ svg {
     font-size: 11px;
     padding: 10px 12px;
     gap: 8px;
+    min-width: 0;
+  }
+  .hv-msg {
+    font-size: 11px;
+    line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   .hv-pipeline {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     height: auto;
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    background: rgba(255,255,255,0.015);
+    background: rgba(255,255,255,0.02);
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
   .hv-pipeline-title {
     display: none;
   }
   .hv-pipeline-steps {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    gap: 4px;
+    gap: 3px;
   }
   .hv-pipe-row {
-    flex-direction: row;
+    display: flex;
     align-items: center;
-    flex: 1;
+    min-width: 0;
+    width: 100%;
   }
   .hv-pipe-node {
-    padding: 4px 6px;
+    padding: 3px 2px;
     font-size: 9px;
-    gap: 4px;
+    gap: 2px;
     justify-content: center;
     width: 100%;
+    min-width: 0;
+    border-radius: 6px;
   }
   .hv-pipe-icon {
     font-size: 10px;
+    flex-shrink: 0;
   }
   .hv-pipe-label {
-    font-size: 9px;
+    font-size: 8.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .hv-pipe-spin {
-    display: none;
-  }
-  .hv-pipe-check {
-    display: none;
-  }
+  .hv-pipe-spin,
+  .hv-pipe-check,
   .hv-connector {
-    width: 10px;
-    height: 2px;
-    margin: 0 2px;
-    flex-shrink: 0;
-  }
-  .hv-connector-pulse {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, #f59e0b, transparent);
-    animation: hv-flow-h 1s linear infinite;
+    display: none;
   }
   .hv-chip {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -1925,10 +1937,11 @@ svg {
     gap: 40px;
   }
   .hero-visual {
-    max-width: 460px;
-    width: 100%;
-    margin-inline: auto;
-  }
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
   .highlights {
     margin-top: 48px;
   }
