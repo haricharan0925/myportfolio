@@ -1006,26 +1006,90 @@ svg {
 
 @media (max-width: 640px) {
   .hv-wrap {
-    height: 300px;
+    height: 380px;
     overflow: hidden;
   }
   .hv-split {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     height: 100%;
   }
   .hv-chat {
     border-right: none;
     overflow: hidden;
-    height: 100%;
-    font-size: 11.5px;
-    padding: 12px 14px;
+    flex: 1;
+    font-size: 11px;
+    padding: 10px 12px;
+    gap: 8px;
   }
   .hv-pipeline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.015);
+    overflow: hidden;
+  }
+  .hv-pipeline-title {
     display: none;
+  }
+  .hv-pipeline-steps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4px;
+  }
+  .hv-pipe-row {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+  .hv-pipe-node {
+    padding: 4px 6px;
+    font-size: 9px;
+    gap: 4px;
+    justify-content: center;
+    width: 100%;
+  }
+  .hv-pipe-icon {
+    font-size: 10px;
+  }
+  .hv-pipe-label {
+    font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hv-pipe-spin {
+    display: none;
+  }
+  .hv-pipe-check {
+    display: none;
+  }
+  .hv-connector {
+    width: 10px;
+    height: 2px;
+    margin: 0 2px;
+    flex-shrink: 0;
+  }
+  .hv-connector-pulse {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+    animation: hv-flow-h 1s linear infinite;
   }
   .hv-chip {
     display: none;
   }
+}
+
+@keyframes hv-flow-h {
+  to { left: 200%; }
 }
 
 /* Highlights strip */
