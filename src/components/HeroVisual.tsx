@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 
-/** Simulated AI chat — looks like a real streaming LLM response. Generic questions only. */
+/** Simulated AI chat â€” looks like a real streaming LLM response. Generic questions only. */
 const CONVERSATIONS: { q: string; a: string; ms: number; tokens: number }[] = [
   {
     q: 'Summarise the uploaded contract in 3 bullet points.',
-    a: `• Effective date is 1 Jan 2025, with auto-renewal unless terminated 30 days prior.\n• Liability is capped at 2× the annual contract value.\n• Governing law: England and Wales; disputes resolved by arbitration.`,
+    a: `â€¢ Effective date is 1 Jan 2025, with auto-renewal unless terminated 30 days prior.\nâ€¢ Liability is capped at 2Ã— the annual contract value.\nâ€¢ Governing law: England and Wales; disputes resolved by arbitration.`,
     ms: 1340,
     tokens: 54,
   },
@@ -16,13 +16,13 @@ const CONVERSATIONS: { q: string; a: string; ms: number; tokens: number }[] = [
   },
   {
     q: 'Translate the last customer message to English.',
-    a: '"I need help setting up the integration — the documentation is not clear on the authentication step."',
+    a: '"I need help setting up the integration â€” the documentation is not clear on the authentication step."',
     ms: 710,
     tokens: 29,
   },
   {
     q: "What anomalies were detected in this week's sensor data?",
-    a: '3 anomalies found:\n1. Temp spike (+14 °C) — sensor T-07, Tuesday 02:41\n2. Pressure drop below threshold — valve V-12, Thursday 09:15\n3. Vibration outlier (σ = 4.2) — motor M-03, Friday 17:52',
+    a: '3 anomalies found:\n1. Temp spike (+14 Â°C) â€” sensor T-07, Tuesday 02:41\n2. Pressure drop below threshold â€” valve V-12, Thursday 09:15\n3. Vibration outlier (Ïƒ = 4.2) â€” motor M-03, Friday 17:52',
     ms: 1120,
     tokens: 61,
   },
@@ -125,7 +125,7 @@ export function HeroVisual() {
     <div className="hv-wrap" aria-hidden="true">
       <div className="hv-inner">
 
-        {/* ── Title bar ── */}
+        {/* â”€â”€ Title bar â”€â”€ */}
         <div className="hv-titlebar">
           <span className="hv-dot" /><span className="hv-dot" /><span className="hv-dot" />
           <span className="hv-title">AI Assistant</span>
@@ -134,10 +134,10 @@ export function HeroVisual() {
           </span>
         </div>
 
-        {/* ── Split layout: chat + pipeline ── */}
+        {/* â”€â”€ Split layout: chat + pipeline â”€â”€ */}
         <div className="hv-split">
 
-          {/* LEFT — chat */}
+          {/* LEFT â€” chat */}
           <div className="hv-chat">
             <div className="hv-sys-line">
               <span className="hv-tag hv-tag-sys">system</span>
@@ -178,15 +178,15 @@ export function HeroVisual() {
             {isDone && donePhase && (
               <div className="hv-footer">
                 <span className="hv-meta">{donePhase.tokens} tokens</span>
-                <span className="hv-meta-sep">·</span>
+                <span className="hv-meta-sep">Â·</span>
                 <span className="hv-meta">{donePhase.ms} ms</span>
-                <span className="hv-meta-sep">·</span>
+                <span className="hv-meta-sep">Â·</span>
                 <span className="hv-meta hv-meta-model">claude-sonnet-5</span>
               </div>
             )}
           </div>
 
-          {/* RIGHT — pipeline */}
+          {/* RIGHT â€” pipeline */}
           <div className="hv-pipeline" aria-hidden="true">
             <p className="hv-pipeline-title">RAG Pipeline</p>
             <div className="hv-pipeline-steps">
@@ -205,7 +205,7 @@ export function HeroVisual() {
                       <span className="hv-pipe-icon">{icon}</span>
                       <span className="hv-pipe-label">{label}</span>
                       {isActive && <span className="hv-pipe-spin" />}
-                      {isDoneStep && <span className="hv-pipe-check">✓</span>}
+                      {isDoneStep && <span className="hv-pipe-check">âœ“</span>}
                     </div>
                   </div>
                 );

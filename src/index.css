@@ -1048,10 +1048,9 @@ svg {
     flex-direction: row;
     align-items: center;
     height: auto;
-    padding: 6px 8px;
+    padding: 8px 16px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     background: rgba(255,255,255,0.02);
-    overflow: hidden;
     width: 100%;
     box-sizing: border-box;
   }
@@ -1059,41 +1058,60 @@ svg {
     display: none;
   }
   .hv-pipeline-steps {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
-    gap: 3px;
   }
   .hv-pipe-row {
     display: flex;
     align-items: center;
-    min-width: 0;
-    width: 100%;
+    flex: 1;
+    justify-content: center;
   }
   .hv-pipe-node {
-    padding: 3px 2px;
-    font-size: 9px;
-    gap: 2px;
-    justify-content: center;
-    width: 100%;
-    min-width: 0;
-    border-radius: 6px;
-  }
-  .hv-pipe-icon {
-    font-size: 10px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    font-size: 14px;
     flex-shrink: 0;
   }
-  .hv-pipe-label {
-    font-size: 8.5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .hv-pipe-icon {
+    font-size: 14px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
   }
-  .hv-pipe-spin,
-  .hv-pipe-check,
-  .hv-connector {
+  .hv-pipe-label {
     display: none;
+  }
+  .hv-pipe-spin {
+    display: none;
+  }
+  .hv-pipe-check {
+    display: none;
+  }
+  .hv-connector {
+    display: block;
+    height: 2px;
+    flex: 1;
+    margin: 0 4px;
+    background: rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .hv-connector-done {
+    background: rgba(245,158,11,0.35);
+  }
+  .hv-connector-pulse {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+    animation: hv-flow-h 1s linear infinite;
   }
   .hv-chip {
     display: none !important;
