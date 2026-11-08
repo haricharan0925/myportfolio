@@ -12,7 +12,7 @@ export function Hero() {
         <div className="hero-copy">
           <p className="hero-eyebrow anim-in" style={{ animationDelay: '60ms' }}>
             <span className="pulse" aria-hidden="true" />
-            {profile.role} · {profile.experienceYears} of professional experience
+            {profile.role} · {profile.experienceYears} experience
           </p>
 
           <h1 id="hero-title" className="hero-title anim-in" style={{ animationDelay: '140ms' }}>
